@@ -1,0 +1,3 @@
+{
+  "config": "{\n  \"version\": \"5.53\",\n  \"themeCollection\": {\n    \"baseTheme\": {\n      \"name\": \"CY24SU06\"\n    }\n  },\n  \"activeSectionIndex\": 0,\n  \"defaultDrillFilterOtherVisuals\": true,\n  \"linguisticSchemaSyncVersion\": 1,\n  \"showPageTooltips\": true,\n  \"sections\": [\n    {\n      \"name\": \"ReportSection\",\n      \"displayName\": \"SQL Server Report\",\n      \"filters\": \"[]\",\n      \"ordinal\": 0\n    }\n  ]\n}"
+}

@@ -1,0 +1,13 @@
+model Model {
+	culture: en-US
+
+	/// Data source connecting to SQL Server
+	dataSource 'SQLServerSource' {
+		type: structured
+		provider: System.Data.SqlClient
+		connectionString: "Data Source=localhost;Initial Catalog=DemoDB;Integrated Security=True"
+
+		annotation ConnectionType = "sqlServer"
+	}
+
+}

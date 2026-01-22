@@ -1,0 +1,8 @@
+{
+  "version": "5.53",
+  "datasetReference": {
+    "byPath": {
+      "path": "../SQLServerDemo.SemanticModel"
+    }
+  }
+}

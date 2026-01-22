@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "report": {
+        "path": "SQLServerDemo.Report"
+      }
+    },
+    {
+      "dataset": {
+        "path": "SQLServerDemo.SemanticModel",
+        "mode": "Default"
+      }
+    }
+  ],
+  "settings": {}
+}
