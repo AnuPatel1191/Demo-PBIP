@@ -1,0 +1,55 @@
+table SampleTable {
+	lineageTag: 36f4a7b8-9e3e-4b2f-a3c4-1d2e3f4a5b6c
+
+	column SampleID {
+		dataType: int64
+		formatString: 0
+		sourceColumn: SampleID
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+	}
+
+	column SampleName {
+		dataType: string
+		sourceColumn: SampleName
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+	}
+
+	column SampleValue {
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceColumn: SampleValue
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+	}
+
+	partition SampleTable {
+		mode: import
+		source {
+			type: m
+			expression: 
+				```
+				let
+				    Source = Sql.Database("localhost", "DemoDB"),
+				    dbo_SampleTable = Source{[Schema="dbo",Item="SampleTable"]}[Data]
+				in
+				    dbo_SampleTable
+				```
+		}
+
+		annotation QueryEditorSerialization = ```
+			<?xml version="1.0" encoding="UTF-16"?>
+			<Mashup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/DataMashup">
+			  <Client>PBIX</Client>
+			</Mashup>
+			```
+	}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+}
